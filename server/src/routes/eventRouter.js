@@ -14,4 +14,12 @@ eventRouter.route('/').get(function(req, res) {
 	console.log("default route");
 });
 
+eventRouter.route('/update/:id').post(function(req, res) {
+	console.log("update route");
+});
+
+eventRouter.route('/delete/:id').get(function(req, res) {
+	console.log("delete route");
+});
+
 module.exports = eventRouter;
