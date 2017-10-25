@@ -17,9 +17,13 @@ class App extends Component {
           </Grid>
         </Navbar>
         <Jumbotron>
-          <Grid>
-            <h1>Welcome to Group Meeting Coordination App</h1>
-          </Grid>
+          <h1>Welcome to Group Meeting Coordination App</h1>
+          <p className="lead">
+            Pick a place. Suggest some times. See who's free!
+          </p>
+          <p className="lead">
+            <Button color="primary" href="/add-event">Create Event</Button>
+          </p>
         </Jumbotron>
       </div>
     );
