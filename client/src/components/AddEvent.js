@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Jumbotron } from 'react-bootstrap';
 import EventService from './EventService';
 
 class AddEvent extends Component {
@@ -23,17 +24,26 @@ class AddEvent extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<form onSubmit={this.handleSubmit}>
-					<label>
-						Event Name: 
-						<input type="text" value={this.state.event}
-							onChange={this.handleChange} className="form-control"/>
-					</label>
-
-					<input type="submit" value="Submit" className="btn btn-primary"/>
-				</form>
-			</div>
+			<Jumbotron>
+				<div className="container">
+					<form class="form-horizontal" onSubmit={this.handleSubmit}>
+						<label>Add Event</label>
+						<br/><br/>
+						<div class="form-group">
+							<label class="col-xs-4">Event Name: </label>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" value={this.state.event}
+									onChange={this.handleChange} className="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<input type="submit" value="Submit" className="btn btn-primary"/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</Jumbotron>
 		);
 	}
 }

@@ -21,8 +21,8 @@ class App extends Component {
           <p className="lead">
             Pick a place. Suggest some times. See who's free!
           </p>
-          <p className="lead">
-            <Button color="primary" href="/add-event">Create Event</Button>
+          <p>
+            <Button className="btn btn-primary" href="/add-event">Create Event</Button>
           </p>
         </Jumbotron>
       </div>
