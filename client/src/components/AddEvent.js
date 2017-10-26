@@ -18,7 +18,7 @@ class AddEvent extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		this.eventService.sendData(this.state.event);
+		this.eventService.sendData(this.state.eventName);
 		this.props.history.push('/');
 	}
 
@@ -27,13 +27,40 @@ class AddEvent extends Component {
 			<Jumbotron>
 				<div className="container">
 					<form class="form-horizontal" onSubmit={this.handleSubmit}>
-						<label>Add Event</label>
+						<label class="label label-default">Add Event</label>
 						<br/><br/>
 						<div class="form-group">
 							<label class="col-xs-4">Event Name: </label>
 							<div class="col-xs-8">
-								<input type="text" class="form-control" value={this.state.event}
+								<input type="text" class="form-control" value={this.state.eventName}
 									onChange={this.handleChange} className="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-4">Location: </label>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" value={this.state.location}
+									className="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-4">Start Date: </label>
+							<div class="col-xs-8">
+								<input type="text" class="form-control" value={this.state.startDate}
+									className="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-4">How long?</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" value={this.state.duration} />
+							</div>
+							<div class="col-xs-2">
+								<select class="form-control" value={this.state.durationUnit}>
+									<option>Minutes</option>
+									<option>Hours</option>
+									<option>Days</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
