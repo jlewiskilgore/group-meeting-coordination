@@ -27,7 +27,7 @@ class AddEvent extends Component {
 		return (
 			<div>
 				<Header />
-				<Jumbotron>
+				<Jumbotron className="App-jumbotron">
 					<div className="container">
 						<form class="form-horizontal" onSubmit={this.handleSubmit}>
 							<label class="label label-default">Add Event</label>

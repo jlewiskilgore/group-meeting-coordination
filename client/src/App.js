@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Jumbotron>
+        <Jumbotron className="App-jumbotron">
           <h1>Welcome to Group Meeting Coordination App</h1>
           <p className="lead">
             Pick a place. Suggest some times. See who's free!
