@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
+import Header from './components/Header';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Navbar inverse fixedTop>
-          <Grid>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="/">Group Meeting Coordination App</a>
-              </Navbar.Brand>
-              <Navbar.Toggle />
-            </Navbar.Header>
-          </Grid>
-        </Navbar>
+        <Header />
         <Jumbotron>
           <h1>Welcome to Group Meeting Coordination App</h1>
           <p className="lead">
