@@ -4,13 +4,33 @@ var cors = require('cors');
 
 var eventRouter = require('./src/routes/eventRouter.js');
 
-app.use(express.static('public'));
-app.use(cors());
+var mongoose = require('mongoose');
+var dbURL = process.env.MONGOLAB_URI;
 
-app.use('/events', eventRouter);
+mongoose.connect(dbURL || 'mongodb://localhost/meetingdb');
 
-app.set('port', (process.env.PORT || 8080));
+var db = mongoose.connection;
 
-app.listen(process.env.PORT || 8080, function() {
-	console.log('Server Listening on Port 8080');
+db.on('error', function(err) {
+	console.log(err);
 })
+
+db.once('open', function() {
+	console.log('Connected to database.');
+
+	app.use(function(req, res, next) {
+		req.db = db;
+		next();
+	});
+
+	app.use('/events', eventRouter);
+
+	app.use(express.static('public'));
+	app.use(cors());
+
+	app.set('port', (process.env.PORT || 8080));
+
+	app.listen(process.env.PORT || 8080, function() {
+		console.log('Server Listening on Port 8080');
+	});
+});
